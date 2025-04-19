@@ -3,9 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 
 # First Example
-
-
-
 url1 = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/netflix_data_webpage.html"
 
 htmldata1 = requests.get(url1).text
@@ -13,7 +10,11 @@ parsed_htmldata1 = BeautifulSoup(htmldata1,'html.parser')
 
 
 print(parsed_htmldata1.title.text)
+
 """
+
+# To understand the command find and find_all
+
 print(parsed_htmldata1.find("tbody").find('tr'))
 print()
 print(parsed_htmldata1.find("tbody").find('tr').find("td"))
@@ -48,8 +49,8 @@ parsedHTML_data2 = BeautifulSoup(html_data2,'html.parser')
 
 title = parsedHTML_data2.title
 print()
-print()
-print(title.text)
+print() # just for aesthetic
+print(title.text) #Test out .text
 
 amazon_data = pd.DataFrame(columns=["Date", "Open", "High", "Low", "Close", "Volume"])
 
